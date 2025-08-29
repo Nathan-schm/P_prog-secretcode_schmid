@@ -53,7 +53,9 @@ namespace secretcode_schmid
             Console.ReadLine();
             
             Console.Clear();
-            Console.WriteLine("kuwgv");
+            Console.WriteLine("=== SECRET CODE ===\n");
+            Console.WriteLine("Choisi un niveau :\n1. Débutant\t\t(1 à 6, sans doublons, indices visibles)\n2. Intermédiaire\t(1 à 6, sans doublons, indices discrets)");
+            Console.WriteLine("3. Avancé\t\t(+ à 8, avec doublons, indices visibles)\n4. Expert\t\t(1 à 9, avec doublons, indices discrets)");
 
             Console.ReadLine();
         }
