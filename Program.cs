@@ -10,6 +10,10 @@ namespace secretcode_schmid
     {
         static void Main(string[] args)
         {
+
+            int level;
+            bool erreurCondition;
+
             //titre du jeu
             Console.WriteLine("╔═══════════════ Nathan Schmid ══════════════╗");
             Console.WriteLine("║                                            ║");
@@ -46,16 +50,31 @@ namespace secretcode_schmid
             Console.WriteLine(" (1 bien placé, 2 mal placés, 1 absent)\n");
             Console.WriteLine("Pour les niveaux 2 et 4 avec indices diescrets :\nExemple :\nCode secret : 5413 (caché)\nVotre essai : 1234\nIndice");
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("→0 bien placé(s), 3 mal placé(s)\n");
+            Console.WriteLine("→ 0 bien placé(s), 3 mal placé(s)\n");
             Console.ResetColor();
             Console.WriteLine("Appuie sur ENTER pour commencer...");
 
-            Console.ReadLine();
+            Console.ReadKey();
             
             Console.Clear();
             Console.WriteLine("=== SECRET CODE ===\n");
             Console.WriteLine("Choisi un niveau :\n1. Débutant\t\t(1 à 6, sans doublons, indices visibles)\n2. Intermédiaire\t(1 à 6, sans doublons, indices discrets)");
-            Console.WriteLine("3. Avancé\t\t(+ à 8, avec doublons, indices visibles)\n4. Expert\t\t(1 à 9, avec doublons, indices discrets)");
+            Console.WriteLine("3. Avancé\t\t(+ à 8, avec doublons, indices visibles)\n4. Expert\t\t(1 à 9, avec doublons, indices discrets)\n");
+            Console.Write("Votre choix (1-4) : ");
+
+            do
+            {
+                if (int.TryParse(Console.ReadLine(), out level))
+                {
+                    erreurCondition = false;
+                }
+                else
+                {
+                    Console.WriteLine(" Choix invalide. Essaie encore.\nVotre choix : ");
+                    erreurCondition= true;
+                }
+            } while (erreurCondition) ;
+            
 
             Console.ReadLine();
         }
